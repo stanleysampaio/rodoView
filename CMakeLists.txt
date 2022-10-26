@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
         rodovia_interface.h
         rodovia_implem.h
         rodovia_implem.cpp
+        pedagio_interface.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

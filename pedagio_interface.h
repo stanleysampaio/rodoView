@@ -1,20 +1,22 @@
-#ifndef RODOVIA_INTERFACE_H
-#define RODOVIA_INTERFACE_H
+#ifndef PEDAGIO_INTERFACE_H
+#define PEDAGIO_INTERFACE_H
 #include <string>
 
 using namespace std;
 
-class Rodovia_Interface {
+class Pedagio_Interface {
 public:
     static int id;
     string name;
     float caixa;
-
+    float preçoCarro;
+    float preçoMoto;
+    float preçoCaminhão;
 
 public:
-    Rodovia_Interface();
+    Pedagio_Interface();
 
-    virtual ~Rodovia_Interface(){};
+    virtual ~Pedagio_Interface(){};
 
     virtual int setId(void);
     virtual int getId (void );
@@ -24,5 +26,4 @@ public:
     virtual float getCaixa(void);
 
 };
-
-#endif // RODOVIA_INTERFACE_H
+#endif // PEDAGIO_INTERFACE_H
