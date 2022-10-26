@@ -19,6 +19,9 @@ set(PROJECT_SOURCES
         mainscreen.cpp
         mainscreen.h
         mainscreen.ui
+        rodovia_interface.h
+        rodovia_implem.h
+        rodovia_implem.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
