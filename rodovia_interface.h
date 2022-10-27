@@ -17,11 +17,11 @@ public:
     virtual ~Rodovia_Interface(){};
 
     virtual int setId(void);
-    virtual int getId (void );
+    virtual int getId (void ) const;
     virtual void setName(string);
-    virtual string getName(void);
+    virtual string getName(void) const;
     virtual void setCaixa(float);
-    virtual float getCaixa(void);
+    virtual float getCaixa(void) const;
 
 };
 
