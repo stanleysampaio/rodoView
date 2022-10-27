@@ -1,10 +1,11 @@
 #include "rodovia_implem.h"
 #include <algorithm>
+#include <vector>
 #include <iostream>
 
 
-Rodovia_implem::Rodovia_implem() : Rodovia_Interface()
-{
+Rodovia_implem::Rodovia_implem() {
+
     Rodovia_implem::setId();
     this->id = Rodovia_implem::getId();
     this->name = "Default";
@@ -19,6 +20,27 @@ Rodovia_implem::Rodovia_implem(const Rodovia_implem& c){
     this->id = Rodovia_implem::getId();
     this->caixa = c.caixa;
 
+};
+
+Rodovia_implem::Rodovia_implem(string name, float caixa) {
+
+    Rodovia_implem::setId();
+    this->id = Rodovia_implem::getId();
+    this->name = name;
+    this->caixa = caixa;
+
+
+};
+
+Rodovia_implem::Rodovia_implem(string name, float caixa, vector<Pedagio_implem*> pedagios) {
+
+    Rodovia_implem::setId();
+    this->id = Rodovia_implem::getId();
+    this->name = name;
+    this->caixa = caixa;
+    for (Pedagio_implem *p : pedagios){
+        this->pedagios.push_back(p);
+    };
 };
 
 int Rodovia_implem::getId() const{
@@ -46,17 +68,18 @@ float Rodovia_implem::getCaixa(void) const{
     return this->caixa;
 };
 
-vector<Pedagio_Interface*> Rodovia_implem::getPedagios() const{
+vector<Pedagio_implem*> Rodovia_implem::getPedagios() const{
     return this->pedagios;
 }
 
-void Rodovia_implem::add(Pedagio_Interface *p){
+void Rodovia_implem::add (Pedagio_implem *p){
     this->pedagios.push_back(p);
-};
+}
 
-bool Rodovia_implem::remove(Pedagio_Interface *p){
+
+bool Rodovia_implem::remove(Pedagio_implem *p){
     if(p != NULL){
-        vector<Pedagio_Interface*>::iterator itPedagio;
+        vector<Pedagio_implem*>::iterator itPedagio;
         itPedagio = find(pedagios.begin(), pedagios.end(), p);
         pedagios.erase(itPedagio);
         return true;
